@@ -15,6 +15,6 @@ public class FizzBuzz {
 
     public static String GetFizzBuzzValue(int number)
     {
-        return String.valueOf(1);
+        return String.valueOf(number);
     }
 }
