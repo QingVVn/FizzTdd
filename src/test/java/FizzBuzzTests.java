@@ -41,4 +41,12 @@ public class FizzBuzzTests {
         var value = fizzBuzz.GetFizzBuzzValue(7);
         Assert.assertEquals("Whizz",value);
     }
+
+    @Test
+    public void Should_Return_Correct_Value_When_Input_6()
+    {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        var value = fizzBuzz.GetFizzBuzzValue(6);
+        Assert.assertEquals("Fizz",value);
+    }
 }
