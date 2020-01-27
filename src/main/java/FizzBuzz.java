@@ -19,6 +19,8 @@ public class FizzBuzz {
             return "FizzBuzz";
         if(number%3 == 0 && number%7 == 0)
             return "FizzWhizz";
+        if(number%5 == 0 && number%7 == 0)
+            return "BuzzWhizz";
         else if(number%3 == 0)
             return "Fizz";
         else if(number%5 == 0)
