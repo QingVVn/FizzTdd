@@ -95,7 +95,7 @@ public class FizzBuzzTests {
     {
         FizzBuzz fizzBuzz = new FizzBuzz();
         var value = fizzBuzz.GetFizzBuzzValue(105);
-        Assert.assertEquals("Buzz",value);
+        Assert.assertEquals("BuzzWhizz",value);
     }
 
     @Test
