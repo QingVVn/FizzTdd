@@ -15,6 +15,8 @@ public class FizzBuzz {
 
     public static String GetFizzBuzzValue(int number)
     {
+        if(String.valueOf(number).contains("3") && !String.valueOf(number).contains("5"))
+            return "Fizz";
         if(number%3 == 0 && number%5 == 0 && number%7 == 0 && String.valueOf(number).contains("5") && !String.valueOf(number).contains("7"))
             return "BuzzWhizz";
         if(number%3 == 0 && number%7 == 0 && String.valueOf(number).contains("5") && !String.valueOf(number).contains("7"))
