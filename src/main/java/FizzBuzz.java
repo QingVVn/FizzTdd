@@ -24,18 +24,13 @@ public class FizzBuzz {
     {
         if(isContained(number, FIZZ_NUMBER) && !isContained(number, BUZZ_NUMBER))
             return FIZZ;
-        if(isMultiple(number, FIZZ_NUMBER) && isMultiple(number, BUZZ_NUMBER) && isMultiple(number, WHIZZ_NUMBER) && isContained(number, BUZZ_NUMBER) && !isContained(number, WHIZZ_NUMBER))
-            return BUZZ+WHIZZ;
-        if(isMultiple(number, FIZZ_NUMBER) && isMultiple(number, WHIZZ_NUMBER) && isContained(number, BUZZ_NUMBER) && !isContained(number, WHIZZ_NUMBER))
-            return WHIZZ;
-        if(isMultiple(number, FIZZ_NUMBER) && isMultiple(number, BUZZ_NUMBER) && isContained(number, BUZZ_NUMBER) && !isContained(number, WHIZZ_NUMBER))
-            return BUZZ;
-        if(isMultiple(number, FIZZ_NUMBER) && isMultiple(number, WHIZZ_NUMBER) && isContained(number, WHIZZ_NUMBER))
-            return FIZZ+WHIZZ;
-        if(isMultiple(number, FIZZ_NUMBER) && isContained(number, WHIZZ_NUMBER))
-            return FIZZ;
-        if(isMultiple(number, WHIZZ_NUMBER) && isContained(number, WHIZZ_NUMBER))
-            return WHIZZ;
+
+        if(isContained(number, BUZZ_NUMBER) && !isContained(number, WHIZZ_NUMBER))
+            return Buzz(number) + Whizz(number);
+
+        if(isContained(number, WHIZZ_NUMBER))
+            return Fizz(number) + Whizz(number);
+
         var result = Fizz(number) + Buzz(number) + Whizz(number);
         return result.isEmpty() ? String.valueOf(number) : result;
     }
@@ -45,23 +40,18 @@ public class FizzBuzz {
         return String.valueOf(number).contains(String.valueOf(n));
     }
 
-    private static boolean isMultiple(int number, int n)
-    {
-        return number%n==0;
-    }
-
     private static String Fizz(int number)
     {
-        return number%FIZZ_NUMBER==0 ? FIZZ : "";
+        return number % FIZZ_NUMBER == 0 ? FIZZ : "";
     }
 
     private static String Buzz(int number)
     {
-        return number%BUZZ_NUMBER==0 ? BUZZ : "";
+        return number % BUZZ_NUMBER == 0 ? BUZZ : "";
     }
 
     private static String Whizz(int number)
     {
-        return number%WHIZZ_NUMBER==0 ? WHIZZ : "";
+        return number % WHIZZ_NUMBER == 0 ? WHIZZ : "";
     }
 }
