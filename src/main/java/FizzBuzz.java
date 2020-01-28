@@ -36,21 +36,8 @@ public class FizzBuzz {
             return FIZZ;
         if(isMultiple(number, WHIZZ_NUMBER) && isContained(number, WHIZZ_NUMBER))
             return WHIZZ;
-        if(isMultiple(number, FIZZ_NUMBER) && isMultiple(number, BUZZ_NUMBER) && isMultiple(number, WHIZZ_NUMBER))
-            return FIZZ+BUZZ+WHIZZ;
-        if(isMultiple(number, FIZZ_NUMBER) && isMultiple(number, BUZZ_NUMBER))
-            return FIZZ+BUZZ;
-        if(isMultiple(number, FIZZ_NUMBER) && isMultiple(number, WHIZZ_NUMBER))
-            return FIZZ+WHIZZ;
-        if(isMultiple(number, BUZZ_NUMBER) && isMultiple(number, WHIZZ_NUMBER))
-            return BUZZ+WHIZZ;
-        else if(isMultiple(number, FIZZ_NUMBER))
-            return FIZZ;
-        else if(isMultiple(number, BUZZ_NUMBER))
-            return BUZZ;
-        else if(isMultiple(number, WHIZZ_NUMBER))
-            return WHIZZ;
-        return String.valueOf(number);
+        var result = Fizz(number) + Buzz(number) + Whizz(number);
+        return result.isEmpty() ? String.valueOf(number) : result;
     }
 
     private static boolean isContained(int number, int n)
@@ -61,5 +48,20 @@ public class FizzBuzz {
     private static boolean isMultiple(int number, int n)
     {
         return number%n==0;
+    }
+
+    private static String Fizz(int number)
+    {
+        return number%FIZZ_NUMBER==0 ? FIZZ : "";
+    }
+
+    private static String Buzz(int number)
+    {
+        return number%BUZZ_NUMBER==0 ? BUZZ : "";
+    }
+
+    private static String Whizz(int number)
+    {
+        return number%WHIZZ_NUMBER==0 ? WHIZZ : "";
     }
 }
